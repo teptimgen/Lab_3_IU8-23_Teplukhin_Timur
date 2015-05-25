@@ -53,6 +53,7 @@ void Add(List *&pFirst, int index, List *p) {
 /// Функция Delete() − точка входа в функцию удаления элемента с определенным индексом
 void Delete(List *&pFirst, int index) {
     ///> Алгоритм функции
+    ///- Инициализируем переменную
     int i = 1;
     ///- pPred - указатель на элемент, предшествующий элементу с номером index
     List *pPred = pFirst;
@@ -75,10 +76,11 @@ void Delete(List *&pFirst, int index) {
 /// Функция main() − точка входа в программу
 int main() {
     ///> Алгоритм функции
+    ///- Используем стандартные имена
     using std::cin;
     using std::cout;
     using std::string;
-
+    ///- Инициализируем переменные
     int N, index, value;
     string message;
     List *pFirst = 0;
@@ -94,9 +96,11 @@ int main() {
             List *p = new List;
             p->value = value;
             p->pNext = NULL;
+            ///- Вызов функции Add()
             Add(pFirst, index, p);
         } else {
             cin >> index;
+            ///- Вызов функции Delete()
             Delete(pFirst, index);
         }
     }
@@ -105,7 +109,9 @@ int main() {
         cout << p->value << " ";
     }
 
+    ///- Пауза в работе программы
     system("pause");
+    ///- Возврат значения 0 - завершение работы программы
     return 0;
 }
 
